@@ -6,7 +6,6 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { save, load } from "redux-localstorage-simple";
 import { Provider } from "react-redux";
-import { fetchReviews } from "./redux/actions/reviewsAction";
 import rootReducer from "./redux/reducers/rootReducer";
 import App from "./App";
 import "./assets/scss/style.scss";

@@ -28,6 +28,7 @@ const ManageCategory = lazy(() => import("./pages/admin/ManageCategory"));
 const ManageProducts = lazy(() => import("./pages/admin/ManageProducts"));
 const Checkout = lazy(() => import("./pages/other/Checkout"));
 const ManageOrder = lazy(() => import("./pages/admin/ManageOrder"))
+const NotFound = lazy(() => import("./pages/other/NotFound"));
 const Wishlist = lazy(() => import("./pages/other/Wishlist"))
 const Dashboard = lazy(() => import("./pages/admin/Dashboard"))
 
@@ -139,6 +140,7 @@ const App = (props) => {
                 path={process.env.PUBLIC_URL + "/wishlist"}
                 component={Wishlist}
               />
+              <Route exact component={NotFound} />
             </Switch>
           </Suspense>
         </Router>
