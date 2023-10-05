@@ -43,17 +43,17 @@ export const updateUser = async (user, id) => {
   }
 }
 export const updateUserRecentView = async (user, prodId) => {
-  console.log(user.recentlyViewIds)
-  console.log(prodId)
-  if(!user.recentlyViewIds.includes(prodId)) {
-    user.recentlyViewIds.unshift(prodId)
-    if(user.recentlyViewIds.length > 4) user.recentlyViewIds.pop()
-    console.log(user)
-    try {
-      const response = await serverAPI.put(`/users/${user.id}`, user)
-      return true;
-    } catch (error) {
-      throw error;
+  if(user) {
+    if (!user.recentlyViewIds.includes(prodId)) {
+      user.recentlyViewIds.unshift(prodId)
+      if (user.recentlyViewIds.length > 4) user.recentlyViewIds.pop()
+      console.log(user)
+      try {
+        const response = await serverAPI.put(`/users/${user.id}`, user)
+        return true;
+      } catch (error) {
+        throw error;
+      }
     }
   }
   return false;
